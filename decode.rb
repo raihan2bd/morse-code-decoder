@@ -26,3 +26,19 @@ def decode_word(word)
   # Return the decoded word.
   my_word
 end
+
+# Define a method to decode a whole sentence from morse code.
+def decode(sentence)
+  my_sentence = ''
+
+  # Decode each word and append it to the decoded sentence, separated by spaces.
+  sentence.split('   ').each do |word|
+    my_sentence += "#{decode_word(word)} "
+  end
+
+  # Return the decode sentence
+  my_sentence
+end
+
+# Print the decoded message for a sample input.
+puts decode('.-   -... --- -..-   ..-. ..- .-.. .-..   --- ..-.   .-. ..- -... .. . ...')
