@@ -14,3 +14,15 @@ MORSE_TABLE = {
 def decode_char(char)
   MORSE_TABLE[char]
 end
+
+# Define a method to decode a whole word from morse code.
+def decode_word(word)
+  my_word = ''
+
+  # Look up each character in the morse code table and append its corresponding letter or number to the decoded word.
+  word.split.each do |char|
+    my_word += decode_char(char)
+  end
+  # Return the decoded word.
+  my_word
+end
